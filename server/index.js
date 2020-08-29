@@ -68,7 +68,7 @@ app.use(require("morgan")("combined"));
 app.use(require("body-parser").urlencoded({ extended: true }));
 app.use(
   cors({
-    origin: "http://localhost:1234", // allow to server to accept request from different origin
+    origin: "http://www.eztweeter.com", // allow to server to accept request from different origin
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true // allow session cookie from browser to pass through
   })
@@ -122,7 +122,7 @@ app.get(
   "/oauth/callback",
   passport.authenticate("twitter", {
     failureRedirect: "/login",
-    successRedirect: "http://localhost:1234/dashboard"
+    successRedirect: "http://www.eztweeter.com/dashboard"
   })
 );
 
